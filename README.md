@@ -34,7 +34,7 @@ git clone https://github.com/l3fuex/scheduled-backups.git
 ```
 
 ## Scheduling
-Add the following line to your crontab with `crontab -e` to schedule backups for 2AM.
+Add the following line to your crontab with `crontab -e` to schedule backups for 2:00 AM.
 ```bash
 0 2 * * *  ansible-playbook /PATH/TO/main.yaml --inventory /PATH/TO/inventory
 ```
