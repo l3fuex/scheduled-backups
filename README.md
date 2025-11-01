@@ -43,6 +43,3 @@ Add the following line to your crontab with `crontab -e` to schedule backups for
 - Review and adjust the inventory file and playbook variables as needed.
 - ssh access needs to be properly configured for all target systems.
 - There is a [bug](https://github.com/ansible-collections/ansible.netcommon/issues/698) in Ansible 2.19 related with network_cli. Workaround: install an older Ansible version such as 2.18.10
-
-## License
-This software is provided under the [Creative Commons BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license.
