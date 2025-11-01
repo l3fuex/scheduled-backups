@@ -26,28 +26,20 @@ However, some playbooks only cover parts of the backup workflow — these are co
 ## Installation
 
 ```bash
-# Clone the repository
-mkdir /opt/scheduled-backups
-cd /opt/scheduled-backups
-git clone https://github.com/l3fuex/scheduled-backups.git
-
 # Install dependencies
-apt install curl sshpass python3-venv python3-pip libssh-dev
+apt install curl sshpass python3-venv python3-pip libssh-dev ansible
 
-# Create virtual python environment
-python3 -m venv /opt/scheduled-backups/.venv
-source /opt/scheduled-backups/.venv/bin/activate
-pip3 install ansible==11.0.0 ansible-pylibssh
-deactivate
+# Clone the repository
+git clone https://github.com/l3fuex/scheduled-backups.git
 ```
 
 ## Scheduling
 Add the following line to your crontab with `crontab -e` to schedule backups for 2AM.
 ```bash
-0 2 * * * ANSIBLE_CONFIG=/opt/scheduled-backups/ansible.cfg /opt/scheduled-backups/.venv/bin/ansible-playbook /opt/scheduled-backups/main.yaml --inventory /opt/scheduled-backups/inventory
+0 2 * * *  ansible-playbook /PATH/TO/main.yaml --inventory /PATH/TO/inventory
 ```
 
 ## Notes
 - Review and adjust the inventory file and playbook variables as needed.
 - ssh access needs to be properly configured for all target systems.
-- Ansible 11.0.0 is mandatory due to a [bug](https://github.com/ansible-collections/ansible.netcommon/issues/698) related with network_cli in Ansibe-Core 2.19.
+- There is a [bug](https://github.com/ansible-collections/ansible.netcommon/issues/698) in Ansible 2.19 related with network_cli. Workaround: install an older Ansible version such as 2.18.10
