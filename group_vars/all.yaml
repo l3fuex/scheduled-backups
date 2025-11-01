@@ -2,6 +2,5 @@
 ansible_user: bkup
 ansible_password: Cisco123
 ansible_become_password: "{{ ansible_password }}"
-workdir: /tmp/cisco-search
 basedir: /srv/backups
 retention_time: 14
