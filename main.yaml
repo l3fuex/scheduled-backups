@@ -1,0 +1,18 @@
+---
+- name: asyncos_backups
+  import_playbook: plb_asyncos.yaml
+
+- name: bigip_backups
+  import_playbook: plb_bigip.yaml
+
+- name: checkpoint_backups
+  import_playbook: plb_checkpoint.yaml
+
+- name: cisco_backups
+  import_playbook: plb_cisco.yaml
+
+- name: linux_backups
+  import_playbook: plb_linux.yaml
+
+- name: dummy_backups
+  import_playbook: plb_dummy.yaml
