@@ -1,0 +1,5 @@
+---
+bkupdir:
+  - /etc
+  - /jail/bind
+  - /root
